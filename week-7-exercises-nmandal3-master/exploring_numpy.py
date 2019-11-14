@@ -5,31 +5,43 @@ Getting comfortable with creating and manipulating
 numpy arrays.
 '''
 
+import numpy as n
+import math as m
 
 # return an array 8 items that can be any number 
 # i.e. doesn't matter what you fill it with, it's
 # the size that is important
 
 def create_array8():
-    return
+    a = n.array([0, 1, 2, 3, 4, 5, 6, 7])
+    return a
 
 # return a 4 x 6 array filled with any number 
 # i.e. doesn't matter what you fill it with, it's
 # the size that is important
 def create_array6_4():
-    return
+    a = n.array([
+        [0, 1, 2, 3,],
+        [10, 11, 12, 13],
+        [20, 21, 22, 23],
+        [30, 31, 32, 33],
+        [40, 41, 42, 43],
+        [50, 51, 52, 53]])
+    return a
 
 # return a 2x3 array of zeros w
 # hint: you don't need to call array
 def create_zeros2_3():
-    return
+    a = n.zeros([2, 3])
+    return a
 
 
 # return a one-dimensional array that starts
 # at 3 and counts up to 96
 # 3, 4, 5 ... 94, 95, 96
 def create96():
-    return
+    a = n.arange(3, 97)
+    return a
 
 
 # create a function that takes in the following:
@@ -44,16 +56,20 @@ def create96():
 #  [3, 4, 5, 6]
 #  [7, 8, 9, 10]
 #  [11, 12, 13, 14]
-def algo_array1():
-    return 
+def algo_array1(start, row, col):
+    a = start + row * col
+    b = n.arange(start, a).reshape(row, col)
+    return b
 
 # create a function that will return an array 
 # that contains a number of values passed in
 # as an input argument evenly spaced from 0 to 2*pi
 # hint: you can generate it algorithmically
 # with a numpy function
-def algo_array2():
-    return 
+def algo_array2(i):
+    p = m.pi
+    a = n.linspace(0, 2*p, i)
+    return a
 
 # create a function with one input argument
 # which takes an input value of a postive number
@@ -62,5 +78,6 @@ def algo_array2():
 #  'odd': array of odd numbers from 1 to input argument (inclusive)
 #  'even': array of even numbers from 2 to input argument (inclusive)
 # hint: you don't need a for loop
-def odd_even():
-    return 
+def odd_even(i):
+    a = {'odd': (n.arange(1, i+1, 2)), 'even': (n.arange(2, i+1, 2))}
+    return a
