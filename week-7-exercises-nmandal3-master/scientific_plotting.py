@@ -30,11 +30,27 @@ def create_scatter_data(num_values):
 
 def main():
     '''The function that will be called first.'''
+    #Chart 1 and 2
+    """
+    happiness = create_line_data(300)
+    cake = create_line_data(300)
+    plt.xlabel('cake')
+    plt.ylabel('happiness')
+    plt.title('life in general')
+    plt.plot(cake, happiness)
+    """
 
-    # number of data points
-    num_values = 100
-    y_data = create_line_data(num_values)
-    scatter_data = create_scatter_data(num_values)
+    #Chart 3
+    
+    scatter_data = create_scatter_data(100)
+    #plt.scatter(scatter_data['x'], scatter_data['a'])
+
+    #Chart 4
+    plt.hist(scatter_data['a'], bins = 10)
+
+    #y_data = create_line_data(num_values)
+    
+    plt.show()
 
 
 
